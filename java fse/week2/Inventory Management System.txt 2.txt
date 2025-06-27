@@ -1,0 +1,43 @@
+class Product {
+    int productId;
+    String productName;
+    int quantity;
+    double price;
+
+    Product(int productId, String productName, int quantity, double price) {
+        this.productId = productId;
+        this.productName = productName;
+        this.quantity = quantity;
+        this.price = price;
+    }
+}
+
+class Inventory {
+    HashMap<Integer, Product> products = new HashMap<>();
+
+    void addProduct(Product product) {
+        products.put(product.productId, product);
+    }
+
+    void updateProduct(int productId, Product updatedProduct) {
+        products.replace(productId, updatedProduct);
+    }
+
+    void deleteProduct(int productId) {
+        products.remove(productId);
+    }
+}
+
+
+// Time Complexity Analysis
+Add: 
+𝑂(1)
+O(1) (HashMap insertion).
+
+Update: 
+𝑂(1)
+O(1).
+
+Delete: 
+𝑂(1)
+O(1).
